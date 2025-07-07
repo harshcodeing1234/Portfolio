@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        :root {
+            --amazon-blue: #131921;
+            --amazon-light-blue: #232F3E;
+            --amazon-yellow: #FFD814;
+            --amazon-orange: #FFA41C;
+            --amazon-gray: #DDDDDD;
+            --amazon-dark-gray: #131A22;
+            --amazon-light-gray: #37475A;
+        }
+
+        body {
+            background-color: #EAEDED;
+        }
+
+        /* Header Styles */
+        .navbar {
+            background-color: var(--amazon-blue);
+            height: 60px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fcaa1766-80d0-41df-99a5-76c80d93522a.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+        }
+
+        .nav-search {
+            display: flex;
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 20px;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 50px;
+            text-align: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .search-input {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .search-icon {
+            background-color: var(--amazon-orange);
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--amazon-dark-gray);
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            cursor: pointer;
+        }
+
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-cart {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-icon {
+            font-size: 30px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--amazon-orange);
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+
+        /* Secondary Nav */
+        .secondary-nav {
+            background-color: var(--amazon-light-blue);
+            height: 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .secondary-nav-item {
+            margin-right: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .secondary-nav-item i {
+            margin-right: 5px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 350px;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/60bc56ca-9145-4a82-ae2e-d3a8758bcb0a.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Shop Sections */
+        .shop-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: #e2e7e6;
+            padding: 20px 0;
+        }
+
+        .box {
+            height: 400px;
+            width: 23%;
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .box-img {
+            height: 70%;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-img img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .box-content {
+            height: 30%;
+        }
+
+        .box-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .box-link {
+            color: var(--amazon-light-blue);
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .box-link:hover {
+            color: var(--amazon-orange);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+        }
+
+        .footer-top {
+            background-color: var(--amazon-light-blue);
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .footer-top:hover {
+            background-color: var(--amazon-gray);
+            color: var(--amazon-dark-gray);
+        }
+
+        .footer-mid {
+            background-color: var(--amazon-dark-gray);
+            color: white;
+            padding: 30px 50px;
+        }
+
+        .footer-mid-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer-mid-item {
+            margin: 0 10px;
+        }
+
+        .footer-mid-item h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer-mid-item ul {
+            list-style: none;
+        }
+
+        .footer-mid-item ul li {
+            font-size: 14px;
+            margin: 8px 0;
+            cursor: pointer;
+            color: #DDD;
+        }
+
+        .footer-mid-item ul li:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            background-color: var(--amazon-dark-gray);
+            color: white;
+            padding: 20px 50px;
+            text-align: center;
+            border-top: 1px solid var(--amazon-light-gray);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 100px;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #AAA;
+            margin-top: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .box {
+                width: 45%;
+                height: 350px;
+            }
+            
+            .nav-search {
+                margin: 0 10px;
+            }
+            
+            .nav-item {
+                margin-left: 10px;
+            }
+            
+            .footer-mid-container {
+                flex-wrap: wrap;
+            }
+            
+            .footer-mid-item {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                width: 90%;
+                height: 350px;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px;
+            }
+            
+            .nav-search {
+                order: 1;
+                margin: 10px 0;
+                max-width: 100%;
+            }
+            
+            .nav-logo {
+                width: 100px;
+                order: 0;
+            }
+            
+            .nav-items {
+                order: 2;
+                margin-top: 10px;
+            }
+            
+            .secondary-nav {
+                height: auto;
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            
+            .secondary-nav-item {
+                margin: 5px 10px;
+            }
+            
+            .hero-section {
+                height: 200px;
+            }
+            
+            .footer-mid-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="nav-logo">
+                <div class="logo" alt="Amazon logo with smile arrow"></div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Alexa Skills</option>
+                    <option>Amazon Devices</option>
+                    <option>Amazon Fashion</option>
+                    <option>Amazon Fresh</option>
+                    <option>Amazon Pharmacy</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="nav-items">
+                <div class="nav-item">
+                    <div class="nav-lang">
+                        <span><i class="fas fa-globe"></i></span>
+                        <span>EN</span>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <div class="nav-account">
+                        <span>Sign in</span>
+                </div>
+                </div>
+                        <div class="nav-item"><div class="nav-account"><span>Account & Lists</span></div></div>
+                    
+                
+
+                <div class="nav-item">
+                    <div class="nav-returns">
+                        <span>Returns</span>
+                        <span>& Orders</span>
+                    </div>
+                </div>
+
+                <div class="nav-item nav-cart">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-count">0</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondary-nav">
+            <div class="secondary-nav-item">
+                <i class="fas fa-bars"></i>
+                <span>All</span>
+            </div>
+            <div class="secondary-nav-item">
+                <span>Today's Deals</span>
+            </div>
+            <div class="secondary-nav-item">
+                <span>Customer Service</span>
+            </div>
+            <div class="secondary-nav-item">
+                <span>Registry</span>
+            </div>
+            <div class="secondary-nav-item">
+                <span>Gift Cards</span>
+            </div>
+            <div class="secondary-nav-item">
+                <span>Sell</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section"></div>
+
+    <!-- Shop Section -->
+    <div class="shop-section">
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2e6d6ac-edec-4a2c-bde3-d293e1264842.png" alt="Latest electronics products including smartphones, laptops, and headphones">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Shop Electronics</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b45f6ada-5a4b-453d-b494-18370f779077.png" alt="Modern home decor items including furniture, lighting, and wall art">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Home Decor</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/244ca2f0-2164-4037-acd2-e9076512cf9e.png" alt="Trendy fashion items including shirts, dresses, and accessories">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Discover Fashion Trends</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9751d582-c104-4cee-aafa-c12a896153d8.png" alt="Best selling books including fiction, non-fiction, and textbooks">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Best Sellers</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5343785a-89cd-4e59-b890-e49196a4b14e.png" alt="Beauty products including skincare, makeup, and haircare">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Beauty Picks</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bf299336-94f5-4867-817d-96f606aee7b5.png" alt="Popular Prime Video content including movies and TV shows">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Prime Video</h2>
+                <p class="box-link">Watch now</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/66d98d9b-5fd7-4de7-a2dd-e22e860f648c.png" alt="Limited-time deals with discounted prices across multiple categories">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Today's Deals</h2>
+                <p class="box-link">See all</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-img">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1cfb50cf-16b4-4c2a-9eca-6f048292e161.png" alt="Pet food, toys and accessories for dogs, cats, and other pets">
+            </div>
+            <div class="box-content">
+                <h2 class="box-title">Pet Supplies</h2>
+                <p class="box-link">Shop now</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            Back to top
+        </div>
+        <div class="footer-mid">
+            <div class="footer-mid-container">
+                <div class="footer-mid-item">
+                    <h3>Get to Know Us</h3>
+                    <ul>
+                        <li>Careers</li>
+                        <li>Blog</li>
+                        <li>About Amazon</li>
+                        <li>Investor Relations</li>
+                        <li>Amazon Devices</li>
+                    </ul>
+                </div>
+                <div class="footer-mid-item">
+                    <h3>Make Money with Us</h3>
+                    <ul>
+                        <li>Sell products on Amazon</li>
+                        <li>Sell on Amazon Business</li>
+                        <li>Sell apps on Amazon</li>
+                        <li>Become an Affiliate</li>
+                        <li>Advertise Your Products</li>
+                    </ul>
+                </div>
+                <div class="footer-mid-item">
+                    <h3>Amazon Payment Products</h3>
+                    <ul>
+                        <li>Amazon Business Card</li>
+                        <li>Shop with Points</li>
+                        <li>Reload Your Balance</li>
+                        <li>Amazon Currency Converter</li>
+                    </ul>
+                </div>
+                <div class="footer-mid-item">
+                    <h3>Let Us Help You</h3>
+                    <ul>
+                        <li>Amazon and COVID-19</li>
+                        <li>Your Account</li>
+                        <li>Your Orders</li>
+                        <li>Shipping Rates & Policies</li>
+                        <li>Returns & Replacements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/98a6fbb4-2eb2-412b-9457-02b141d7231f.png" alt="Amazon logo footer version">
+            </div>
+            <div>
+                <p>Conditions of Use | Privacy Notice | Interest-Based Ads</p>
+                <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple carousel functionality
+        const heroImages = [
+            "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/698bb560-1f42-40f8-b7a9-df7c9f942573.png",
+            "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/38af8ef0-2541-424c-b97d-7471207b5333.png",
+            "https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/126f0ddd-b233-4270-b313-93163369b8ab.png"
+        ];
+        
+        let currentImageIndex = 0;
+        const heroSection = document.querySelector('.hero-section');
+        
+        function changeHeroImage() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `url(${heroImages[currentImageIndex]})`;
+        }
+        
+        setInterval(changeHeroImage, 5000);
+        
+        // Cart counter simulation
+        const cartCount = document.querySelector('.cart-count');
+        const boxLinks = document.querySelectorAll('.box-link');
+        
+        boxLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const currentCount = parseInt(cartCount.textContent);
+                cartCount.textContent = currentCount + 1;
+                
+                if(currentCount === 0) {
+                    cartCount.style.display = 'inline-block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

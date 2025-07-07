@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS */
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Dark mode preference */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #111827;
+                color: #f3f4f6;
+            }
+            .card {
+                background-color: #1f2937;
+            }
+            nav {
+                background-color: #1f2937;
+            }
+        }
+        footer {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #6a737b;
+            /*border-top: 1px solid #a2a9b1;*/
+        }
+        /* Dark mode preference */
+        body {
+            background-color: #f9fafb; /* Light mode background */
+            color: #111827; /* Light mode text color */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark {
+            background-color: #111827; /* Dark mode background */
+            color: #f3f4f6; /* Dark mode text color */
+        }
+        .dark .card {
+            background-color: #1f2937; /* Dark mode card background */
+        }
+        .dark nav {
+            background-color: #1f2937; /* Dark mode nav background */
+        }
+        /* Move dot when checked */
+         input:checked ~ .dot {
+         transform: translateX(100%);
+        }
+
+
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span  class="text-xl font-bold gradient-text">MyPortfolio</span>
+                     
+                </div>
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-gray-600 hover:text-indigo-600 transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-indigo-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Theme Toggle -->
+                <!-- <div class="flex items-center">
+                    <label for="theme-toggle" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" id="theme-toggle" class="hidden" />
+                            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <body id="body" class="bg-gray-50 font-sans">
+
+                            <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                        </div>
+                        <div class="ml-3 text-gray-700 font-medium">Dark Mode</div>
+                    </label>
+            </div> -->
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-600 hover:text-indigo-600 transition">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-indigo-600 transition">About</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-indigo-600 transition">Projects</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-600 hover:text-indigo-600 transition">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-indigo-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="gradient-text">Harsh kumar</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6"></h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        I build exceptional digital experiences with modern technologies and clean, efficient code.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Get in touch</a>
+                        <a href="#projects" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition">View projects</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-indigo-100 shadow-lg">
+                        <img src="WhatsApp Image 20.jpg" alt="Professional portrait of a smiling female developer with brown hair wearing glasses and working on a laptop in a modern office" class="w-full h-full object-cover"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">About Me</h2>
+            <div class="md:flex">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="rounded-lg overflow-hidden shadow-lg w-64 h-64">
+                        <img src="free-photo.jpeg" alt="Side profile portrait of the developer working at a desk with multiple monitors showing code" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg text-gray-600 mb-6">
+                        I'm passionate about technology and innovation.
+                        I'm currently learning the basics of programming — including Python, — and I'm especially interested in how Artificial Intelligence can be used to solve real-world problems.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I believe in learning by doing. I'm open to internships, collaborations, and projects where I can grow my skills while contributing meaningfully.
+
+                       🌱 On a journey to become a tech innovator. Let's connect!
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        When I'm not coding, you can find me hiking in nature, reading sci-fi books, or experimenting with new cooking recipes.
+                    </p>
+                    <div>
+                        <a href="resume.pdf" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card card rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2FWhat_is_E_commerce_and_What_are_its_Applications_2_d2eb0d4402.jpg&w=4500&q=90" alt="E-commerce dashboard interface showing analytics graphs, recent orders, and product statistics" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Clone</h3>
+                        <p class="text-gray-600 mb-4">
+                            A comprehensive Website with help of AI for managing products, orders, and customer analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">HTML</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">CSS</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">JavaScript</span>
+                        </div>
+                        <a href="amazon_clone.html" class="text-indigo-600 hover:text-indigo-800 font-medium">View Project →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card card rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://play-lh.googleusercontent.com/G8rsy4-BiTkvMw07sk3okLQzDVJy6fQ2kwFFB1qURwYCH6ycjW4O6s_Ug-rGoZ_67Qg=w526-h296-rw" alt="Mobile app screens showing a fitness tracker with workout statistics and progress charts" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Snack Game</h3>
+                        <p class="text-gray-600 mb-4">
+                            Snack Game for fun and enjoy 
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Python</span>
+                            <!-- <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full"></span> -->
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">Oops</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Currently working </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card card rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://imusician.imgix.net/images/What-is-Spotify-for-Artists__meta.jpg?auto=compress&w=1200&h=630&fit=crop" alt="Task management application interface with drag and drop functionality and priority color coding" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Spotify Clone</h3>
+                        <p class="text-gray-600 mb-4">
+                            Productivity Music Website for fun with collaboration features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">HTML</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">CSS</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Next Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Frontend Skills -->
+                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="C_Logo.png" alt="C logo with blue atom graphic" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">C</h3>
+                    <p class="text-gray-600">Advanced</p>
+                </div>
+                
+                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="Python.svg.png" alt="python logo with yellow square and JS letters" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Python</h3>
+                    <p class="text-gray-600">Intermediate</p>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="ISO_C++_Logo.svg.png" alt="C++ logo with green hexagon shape" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">C++</h3>
+                    <p class="text-gray-600">Basic</p>
+                </div>
+                
+                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="HTML5_logo_and_wordmark.svg.png" alt="HTML logo with green leaf shape" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">HTML</h3>
+                    <p class="text-gray-600">Intermediate</p>
+                </div>
+                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                         <img src="CSS3_logo.png" alt="CSS logo with green leaf shape" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">CSS</h3>
+                    <p class="text-gray-600">Intermediate</p>
+            </div>
+            
+            <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="github-.jpg" alt="Git logo with green leaf shape" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Git</h3>
+                    <p class="text-gray-600">Basic</p>
+        </div>
+        <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="javascript.png" alt="JavaScript logo with green leaf shape" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">JavaScript</h3>
+                    <p class="text-gray-600">Upcoming</p>
+        </div>
+        <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <img src="SQL.png" alt="SQL logo with green leaf shape" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">SQL</h3>
+                    <p class="text-gray-600">Upcoming</p>
+        
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-600 mb-6">
+                        Feel free to reach out for job opportunities, collaborations, or just to say hello!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>harshkr53453@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>620*****82</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="h-6 w-6 text-indigo-600 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Patna,Bihar</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-xl font-semibold mb-4">Connect With Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="www.linkedin.com/in/harsh-bca" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/harshcodeing1234" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://x.com/HarshKu04212638" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition w-full">Send Message</button>
+                        </div>
+                        <div id="form-message" class="hidden p-4 rounded-lg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="py-8 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="text-center md:text-left"> -->
+                   <footer>&copy; Harsh 2024 | All Rights Reserved</footer>
+                <!-- </div> -->
+                <!-- <div class="mt-4 md:mt-0">
+                    <p class="text-center md:text-right text-gray-400">Built with passion using HTML, CSS, and JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                // Simple validation
+                if (name === '' || email === '' || message === '') {
+                    showFormMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                // In a real application, you would send the form data to a server here
+                // For demonstration, we'll just show a success message
+                showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+            });
+            
+            function showFormMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.className = ''; // Clear all classes
+                formMessage.classList.add('block');
+                
+                if (type === 'error') {
+                    formMessage.classList.add('bg-red-100', 'text-red-700');
+                } else if (type === 'success') {
+                    formMessage.classList.add('bg-green-100', 'text-green-700');
+                }
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.remove('block');
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }
+            
+            // Add animation on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.project-card, .skill-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animation
+            const animatedElements = document.querySelectorAll('.project-card, .skill-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Initial check in case elements are already visible
+            animateOnScroll();
+        });
+        
+    </script>
+</body>
+</html>
