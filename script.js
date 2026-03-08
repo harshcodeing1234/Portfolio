@@ -78,38 +78,9 @@ window.addEventListener('scroll', () => {
 // Contact form handling
 const contactForm = document.querySelector('#contact-form');
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const name = contactForm.querySelector('#name').value.trim();
-    const email = contactForm.querySelector('#email').value.trim();
-    const subject = contactForm.querySelector('#subject').value.trim();
-    const message = contactForm.querySelector('#message').value.trim();
-    
-    // Validation
-    if (!name || !email || !subject || !message) {
-        showFormMessage('Please fill in all fields.', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showFormMessage('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    // Simulate form submission
     const submitBtn = contactForm.querySelector('.modern-submit-btn');
-    const originalText = submitBtn.textContent;
-    
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        showFormMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
 });
 
 function showFormMessage(message, type) {
