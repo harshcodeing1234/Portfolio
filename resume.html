@@ -1,87 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh-Resume</title>
-  <link rel="stylesheet" href="resume.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact span {
+            font-size: 0.9em;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.4em;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .job,
+        .education,
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .job h3,
+        .education h3,
+        .project h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .job .meta,
+        .education .meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        @media print {
+            body {
+                max-width: none;
+                margin: 0;
+                padding: 15px;
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="resume-container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <h1>Harsh Kumar</h1>
-      
-      <div class="contact">
-        <p>
-          📧 <a href="mailto:harshkr53453@gmail.com">harshkr53453@gmail.com</a><br>
-          📱 +91-620580-8582<br>
-          💼 <a href="https://www.linkedin.com/in/harsh-bca" target="_blank">LinkedIn Profile</a><br>
-          🔗 <a href="https://github.com/harshcodeing1234" target="_blank">GitHub Profile</a>
-        </p>
-      </div>
+    <div class="header">
+        <h1>Harsh Kumar</h1>
+        <p>Computer Science Student | Aspiring Data Scientist</p>
+        <div class="contact">
+            <span>📧 harshkr53453@gmail.com</span>
+            <span>📱 +91-620*****82</span>
+            <span>📍 Patna, Bihar</span>
+            <span>💼 <a href="https://www.linkedin.com/in/harsh-bca/"
+                    target="_blank">linkedin.com/in/harsh-bca</a></span>
+            <span>🔗 <a href="https://github.com/harshcodeing1234"
+                    target="_blank">github.com/harshcodeing1234</a></span>
+        </div>
+    </div>
 
-      <div class="skills">
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Passionate Computer Science student with strong interest in data science and software engineering. Currently
+            pursuing BCA degree while building practical skills through personal projects and internships. Demonstrated
+            ability to create innovative digital solutions and turn ideas into reality using modern web technologies and
+            data science tools.</p>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        <div class="education">
+            <h3>BCA+MCA (Integreated)</h3>
+            <div class="meta">Amity University, Patna | 2024 - Present | CGPA: 8.3/10</div>
+            <ul>
+                <li>Focus on software engineering, web development, and data structures</li>
+                <li>Relevant Coursework: Data Structures, DBMS, OS, Computer Networks, Web Technologies</li>
+                <li>Maintaining strong academic performance while working on coding projects</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming Languages</h4>
+                <p>C, C++, Java, Python</p>
+            </div>
+            <div class="skill-category">
+                <h4>Data Science & Analytics</h4>
+                <p>NumPy, Pandas, Matplotlib, Seaborn, EDA, Feature Engineering, Data Cleaning</p>
+            </div>
+            <div class="skill-category">
+                <h4>Web Technologies</h4>
+                <p>HTML5, CSS3, Streamlit</p>
+            </div>
+            <div class="skill-category">
+                <h4>Database & Tools</h4>
+                <p>MySQL, Oracle Database, Git, GitHub, VS Code</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+        <div class="job">
+            <h3>C++ & Oracle Database Intern</h3>
+            <div class="meta">Summer Internship Program | July 2025</div>
+            <ul>
+                <li>Gained hands-on experience with C++ programming and Oracle database management</li>
+                <li>Collaborated with senior developers on real-world database optimization projects</li>
+                <li>Developed understanding of enterprise-level database architecture and design patterns</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Key Projects</h2>
+        <div class="project">
+            <h3>Automated ML Pipeline Web Application</h3>
+            <ul>
+                <li>Comprehensive web application automating entire ML pipeline from data preprocessing to model
+                    prediction</li>
+                <li>Technologies: Python, Pandas, Seaborn, Streamlit, Machine Learning algorithms</li>
+                <li>Live deployment: <a href="https://ml-regressionn.streamlit.app/"
+                        target="_blank">ml-regressionn.streamlit.app</a></li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3>Nexa AI Assistant</h3>
+            <ul>
+                <li>Intelligent AI assistant built using OpenAI API and Python with NLP capabilities</li>
+                <li>Features natural language processing and conversational capabilities</li>
+                <li>GitHub: <a href="https://github.com/harshcodeing1234/Nexa-AI-Assistant"
+                        target="_blank">github.com/harshcodeing1234/Nexa-AI-Assistant</a></li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3>Group Project Task Claimer</h3>
+            <ul>
+                <li>Modern web application solving task distribution confusion in group projects</li>
+                <li>Technologies: Node.js, JavaScript, SQL with real-time collaboration features</li>
+                <li>GitHub: <a href="https://github.com/harshcodeing1234/glitch-1.0---circutBreakers-.git"
+                        target="_blank">github.com/harshcodeing1234/glitch-1.0---circutBreakers-</a></li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3>HarshWrites Blog Platform</h3>
+            <ul>
+                <li>Platform for sharing insights, tutorials on programming, technology, and personal development</li>
+                <li>Technologies: Node.js, SQL, JavaScript with responsive design</li>
+                <li>GitHub: <a href="https://github.com/harshcodeing1234/Harshwrites"
+                        target="_blank">github.com/harshcodeing1234/Harshwrites</a></li>
+            </ul>
+        </div>
+        <div class="project">
+            <h3>Digital Diary with Lock</h3>
+            <ul>
+                <li>Full-stack digital diary application with password-based security</li>
+                <li>Technologies: C++, Oracle Database, modern web frontend</li>
+                <li>GitHub: <a href="https://github.com/harshcodeing1234/Digital-diary.git"
+                        target="_blank">github.com/harshcodeing1234/Digital-diary</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Achievements & Activities</h2>
         <ul>
-          <li><strong>Languages:</strong> C, C++, Java, Python</li>
-          <li><strong>Web:</strong> HTML5, CSS</li>
-          <li><strong>Databases:</strong> MySQL</li>
-          <li><strong>Tools:</strong> GitHub, VS Code</li>
+            <li>Maintained 8.3 CGPA while actively developing 5+ personal projects</li>
+            <li>Built end-to-end applications spanning AI, data science, and web development</li>
+            <li>Active GitHub contributor with multiple repositories showcasing diverse technical skills</li>
+            <li>2+ years of continuous learning in modern technologies and frameworks</li>
+            <li>Successfully deployed live applications with real-world functionality</li>
         </ul>
-      </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <h2>Professional Summary</h2>
-      <p>
-        Motivated full‑stack trainee with a focus on clean, readable code and user‑friendly interfaces.
-        Passionate about solving real‑world problems using web technologies and learning modern tools.
-      </p>
-
-      <h2>Education</h2>
-      <p>
-        <strong>BCA + MCA (Integrated)</strong> — Amity University, Patna (2024–2029)
-      </p>
-      <ul>
-        <li>Key Coursework: Data Structures, DBMS, OS, Computer Networks, Web Technologies</li>
-        <li>Achievements: Class Representative; Organized coding meetups</li>
-      </ul>
-
-      <h2>Projects</h2>
-      <ol>
-        <li>
-          <strong>E-commerce Platform</strong> —
-          <a href="https://harshcodeing1234.github.io/Portfolio/amazon_clone.html" target="_blank">Live Demo</a>
-          <ul>
-            <li>Full-stack e-commerce solution built with HTML, CSS, and JavaScript</li>
-            <li>Features include admin dashboard</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Digital Diary with Lock</strong> —
-          <a href="https://github.com/harshcodeing1234/Digital-diary.git" target="_blank">Source Code</a>
-          <ul>
-            <li>Protected personal notes with password‑based access</li>
-            <li>CRUD operations with simple, clean HTML pages</li>
-          </ul>
-        </li>
-      </ol>
-
-      <h2>Experience</h2>
-      <p>
-        <strong>C++ & Oracle Database Intern</strong> — Internexus, On-site (July 2025 – Aug 2025)
-      </p>
-      <ul>
-        <li>Learn C++ & Oracle database and how to implement in real-life projects</li>
-        <li>Collaborated using GitHub pull requests and code reviews</li>
-      </ul>
-
-      <p style="text-align: center; margin-top: 40px; font-style: italic; opacity: 0.7;">
-        References available upon request.
-      </p>
+    <div class="section">
+        <h2>Additional Information</h2>
+        <ul>
+            <li><strong>Languages:</strong> English (Fluent), Hindi (Native)</li>
+            <li><strong>Interests:</strong> Machine Learning, Data Analysis, Web Development, Open Source Contribution
+            </li>
+            <li><strong>Availability:</strong> Open to internships and entry-level positions</li>
+        </ul>
     </div>
-  </div>
 </body>
+
 </html>
