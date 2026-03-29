@@ -212,13 +212,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
-const contactForm = document.querySelector('#contact-form');
-contactForm.addEventListener('submit', (e) => {
-    const submitBtn = contactForm.querySelector('.modern-submit-btn');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-});
 
 // Animate elements on scroll
 const observerOptions = {
