@@ -127,6 +127,26 @@ const projectData = {
         tech: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
         github: null,
         live: 'https://ml-regressionn.streamlit.app/'
+    },
+    offlinemedia: {
+        title: 'OfflineMedia - Multi-Platform Video Scraper',
+        problem: 'Users want to save and watch short-form videos offline from multiple platforms without switching between apps.',
+        solution: 'Built a comprehensive Flask application that scrapes videos from Instagram, YouTube, and Facebook, stores them locally with TTL-based expiration, and provides a unified TikTok-style viewing interface with social features.',
+        features: [
+            'Multi-platform scraping (Instagram Reels, YouTube Shorts, Facebook Reels)',
+            'Selenium-based automation with anti-detection measures',
+            'Concurrent video downloads with thread pool executor',
+            'TikTok-style swipe navigation interface',
+            'User authentication and session management',
+            'Social features (likes, comments, interactions)',
+            'Automatic content expiration with TTL system',
+            'Real-time scraping progress monitoring',
+            'SQLite database with SQLAlchemy ORM',
+            'Cookie-based Instagram authentication'
+        ],
+        tech: ['Flask', 'Selenium', 'yt-dlp', 'SQLAlchemy', 'SQLite', 'Python', 'JavaScript', 'HTML/CSS'],
+        github: 'https://github.com/harshcodeing1234/OfflineMedia.git',
+        live: null,
     }
 };
 
@@ -138,26 +158,29 @@ function openProjectModal(projectId) {
     
     modalBody.innerHTML = `
         <h2>${project.title}</h2>
+        ${project.note ? `<div class="project-note" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 20px; border-radius: 8px; margin: 15px 0; font-weight: 500; text-align: center;">
+            ${project.note}
+        </div>` : ''}
         
         <div class="modal-section">
-            <h3>🎯 Problem</h3>
+            <h3>Problem</h3>
             <p>${project.problem}</p>
         </div>
         
         <div class="modal-section">
-            <h3>💡 Solution</h3>
+            <h3>Solution</h3>
             <p>${project.solution}</p>
         </div>
         
         <div class="modal-section">
-            <h3>✨ Key Features</h3>
+            <h3>Key Features</h3>
             <ul class="feature-list">
                 ${project.features.map(f => `<li>${f}</li>`).join('')}
             </ul>
         </div>
         
         <div class="modal-section">
-            <h3>🛠️ Technologies Used</h3>
+            <h3>Technologies Used</h3>
             <div class="tech-tags">
                 ${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
             </div>

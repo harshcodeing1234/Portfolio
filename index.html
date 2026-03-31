@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <h1 class="logo">Portfolio</h1>
+            <h1 class="logo">&lt;/&gt; Portfolio</h1>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">What I Do</a></li>
@@ -42,7 +42,7 @@
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">5+</span>
+                        <span class="stat-number">6+</span>
                         <span class="stat-label">Problems Solved</span>
                     </div>
                     <div class="stat-item">
@@ -86,7 +86,7 @@
             
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>5+</h3>
+                    <h3>6+</h3>
                     <p>Real Problems Solved</p>
                 </div>
                 <div class="stat-item">
@@ -181,13 +181,67 @@
         <div class="container">
             <h2>Problems I've Solved</h2>
             <p style="text-align: center; opacity: 0.8; margin-bottom: 2rem;">Real solutions for real challenges</p>
-            <div class="projects-grid">
-                <div class="project-card" onclick="openProjectModal('nexa')">
+                        <div class="projects-grid">
+                <div class="project-card" onclick="openProjectModal('offlinemedia')">
                     <div class="project-image">
-                        <img width="450px" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=450&h=200&fit=crop" alt="Nexa AI Assistant" />
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="50%" style="stop-color:#764ba2"/>
+                                    <stop offset="100%" style="stop-color:#f093fb"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="450" height="200" fill="#0f172a"/>
+                            
+                            <!-- Logo Icon -->
+                            <circle cx="120" cy="100" r="50" fill="url(#logoGrad)" opacity="0.2"/>
+                            <path d="M 95 100 L 95 75 L 120 90 L 145 75 L 145 100 L 120 115 Z" fill="url(#logoGrad)"/>
+                            <circle cx="120" cy="100" r="8" fill="#fff"/>
+                            <path d="M 100 120 Q 120 135 140 120" stroke="#fff" stroke-width="2" fill="none"/>
+                            
+                            <!-- Text -->
+                            <text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">Offline</text>
+                            <text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#logoGrad)">Media</text>
+                            
+                            <!-- Tagline -->
+                            <text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Multi-Platform Video Scraper</text>
+                        </svg>
                     </div>
                     <div class="project-content">
-                        <h3>Nexa AI Assistant</h3>
+                        <h3>OfflineMedia <span style="color: #667eea; font-size: 0.8em;">★ Major Project</span></h3>
+                        <p>A Flask-based web scraper that downloads short-form videos from Instagram, YouTube, and Facebook, providing a TikTok-like viewing experience.</p>
+                        <div class="project-tech">
+                            <div class="project-tech-tags">
+                                <span>Flask</span>
+                                <span>Selenium</span>
+                                <span>yt-dlp</span>
+                            </div>
+                            <button class="view-details-btn">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openProjectModal('nexa')">
+                    <div class="project-image">
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="nexaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="450" height="200" fill="#0f172a"/>
+                            <circle cx="120" cy="100" r="50" fill="url(#nexaGrad)" opacity="0.2"/>
+                            <circle cx="120" cy="100" r="35" fill="url(#nexaGrad)"/>
+                            <path d="M 105 95 L 115 95 L 115 85 M 125 95 L 135 95 L 135 85 M 100 110 Q 120 120 140 110" stroke="#fff" stroke-width="3" fill="none"/>
+                            <text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">Nexa</text>
+                            <text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#nexaGrad)">AI</text>
+                            <text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Intelligent Assistant</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Nexa AI Assistant <span style="color: #667eea; font-size: 0.8em;">★ Major Project</span></h3>
                         <p>Intelligent AI assistant built using OpenAI API and Python. Features natural language processing and conversational capabilities.</p>
                         <div class="project-tech">
                             <div class="project-tech-tags">
@@ -200,18 +254,18 @@
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProjectModal('diary')">
+                <div class="project-card" onclick="openProjectModal('ml')">
                     <div class="project-image">
-                        <img width="450px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2JP5ta8jYSoAyKSy3DEC0zJiDhRb5MdaRw&s" alt="Digital diary" />
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#a8edea"/><stop offset="100%" style="stop-color:#fed6e3"/></linearGradient></defs><rect width="450" height="200" fill="#0f172a"/><circle cx="120" cy="100" r="50" fill="url(#mlGrad)" opacity="0.2"/><circle cx="110" cy="90" r="8" fill="url(#mlGrad)"/><circle cx="130" cy="90" r="8" fill="url(#mlGrad)"/><circle cx="120" cy="110" r="8" fill="url(#mlGrad)"/><path d="M 110 90 L 120 110 M 130 90 L 120 110" stroke="url(#mlGrad)" stroke-width="2"/><text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">ML</text><text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#mlGrad)">Pipeline</text><text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Automated ML</text></svg>
                     </div>
                     <div class="project-content">
-                        <h3>Digital Diary with Lock</h3>
-                        <p>A full-stack digital diary application built with C++ backend, Oracle database, and modern web frontend with password protection.</p>
+                        <h3>Automated ML Pipeline</h3>
+                        <p>A comprehensive web application that automates the entire machine learning pipeline, from data preprocessing to model training.</p>
                         <div class="project-tech">
                             <div class="project-tech-tags">
-                                <span>C++</span>
-                                <span>SQL</span>
-                                <span>Node.js</span>
+                                <span>ML</span>
+                                <span>Pandas</span>
+                                <span>Seaborn</span>
                             </div>
                             <button class="view-details-btn">View Details →</button>
                         </div>
@@ -220,7 +274,7 @@
 
                 <div class="project-card" onclick="openProjectModal('task')">
                     <div class="project-image">
-                        <img width="450px" src="data:image/jpeg;base64,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" alt="Task Claimer" />
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="taskGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4facfe"/><stop offset="100%" style="stop-color:#00f2fe"/></linearGradient></defs><rect width="450" height="200" fill="#0f172a"/><circle cx="120" cy="100" r="50" fill="url(#taskGrad)" opacity="0.2"/><rect x="95" y="80" width="50" height="40" rx="5" fill="url(#taskGrad)"/><path d="M 105 95 L 110 100 L 120 90" stroke="#fff" stroke-width="3" fill="none"/><text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">Task</text><text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#taskGrad)">Claimer</text><text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Group Task Management</text></svg>
                     </div>
                     <div class="project-content">
                         <h3>Group Task Claimer</h3>
@@ -236,9 +290,42 @@
                     </div>
                 </div>
 
+                <div class="project-card" onclick="openProjectModal('diary')">
+                    <div class="project-image">
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="diaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f093fb"/>
+                                    <stop offset="100%" style="stop-color:#f5576c"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="450" height="200" fill="#0f172a"/>
+                            <circle cx="120" cy="100" r="50" fill="url(#diaryGrad)" opacity="0.2"/>
+                            <rect x="95" y="75" width="50" height="50" rx="5" fill="url(#diaryGrad)"/>
+                            <circle cx="120" cy="100" r="15" fill="#fff"/>
+                            <path d="M 120 95 L 120 105 M 115 100 L 125 100" stroke="#f5576c" stroke-width="2"/>
+                            <text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">Digital</text>
+                            <text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#diaryGrad)">Diary</text>
+                            <text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Secure Personal Notes</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Digital Diary with Lock</h3>
+                        <p>A full-stack digital diary application built with C++ backend, Oracle database, and modern web frontend with password protection.</p>
+                        <div class="project-tech">
+                            <div class="project-tech-tags">
+                                <span>C++</span>
+                                <span>SQL</span>
+                                <span>Node.js</span>
+                            </div>
+                            <button class="view-details-btn">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card" onclick="openProjectModal('blog')">
                     <div class="project-image">
-                        <img width="450px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO2JP5ta8jYSoAyKSy3DEC0zJiDhRb5MdaRw&s" alt="HarshWrites" />
+                        <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="blogGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fa709a"/><stop offset="100%" style="stop-color:#fee140"/></linearGradient></defs><rect width="450" height="200" fill="#0f172a"/><circle cx="120" cy="100" r="50" fill="url(#blogGrad)" opacity="0.2"/><rect x="95" y="80" width="50" height="40" rx="5" fill="url(#blogGrad)"/><path d="M 105 90 L 135 90 M 105 100 L 130 100 M 105 110 L 135 110" stroke="#fff" stroke-width="2"/><text x="180" y="90" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#fff">Harsh</text><text x="180" y="125" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#blogGrad)">Writes</text><text x="185" y="145" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Blog Platform</text></svg>
                     </div>
                     <div class="project-content">
                         <h3>HarshWrites Blog</h3>
@@ -248,24 +335,6 @@
                                 <span>Node.js</span>
                                 <span>SQL</span>
                                 <span>JavaScript</span>
-                            </div>
-                            <button class="view-details-btn">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="openProjectModal('ml')">
-                    <div class="project-image">
-                        <img width="450px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB9gdoN6ER10vrEwVIEBkD4fpA9VLjYKfZ4g&s" alt="ML Pipeline" />
-                    </div>
-                    <div class="project-content">
-                        <h3>Automated ML Pipeline</h3>
-                        <p>A comprehensive web application that automates the entire machine learning pipeline, from data preprocessing to model training.</p>
-                        <div class="project-tech">
-                            <div class="project-tech-tags">
-                                <span>ML</span>
-                                <span>Pandas</span>
-                                <span>Seaborn</span>
                             </div>
                             <button class="view-details-btn">View Details →</button>
                         </div>

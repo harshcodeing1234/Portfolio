@@ -507,12 +507,20 @@ body {
 }
 
 .project-tech span {
-    background: var(--accent-color);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-tech span:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .view-details-btn {
@@ -1720,13 +1728,13 @@ h2 {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
 
 .close:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: rotate(90deg);
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    transform: rotate(90deg) scale(1.1);
 }
 
 .modal-content h2 {
@@ -1735,14 +1743,51 @@ h2 {
     font-size: 2rem;
 }
 
+.modal-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.project-note {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
 .modal-section {
     margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
 }
 
 .modal-section h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+}
+
+.section-text {
+    opacity: 0.9;
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 .modal-section p {
@@ -1756,18 +1801,15 @@ h2 {
 }
 
 .feature-list li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
+    padding: 0.8rem 0;
     opacity: 0.9;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
 }
 
-.feature-list li:before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
+.feature-list li:last-child {
+    border-bottom: none;
 }
 
 .tech-tags {
@@ -1777,12 +1819,19 @@ h2 {
 }
 
 .tech-tag {
-    background: var(--accent-color);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .modal-links {
@@ -1838,8 +1887,11 @@ h2 {
 }
 
 .view-details-btn:hover {
-    background: var(--accent-color);
-    color: white;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(5px);
 }
 
 .project-card {
